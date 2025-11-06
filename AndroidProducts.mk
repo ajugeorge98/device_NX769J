@@ -1,10 +1,6 @@
 #
-# Copyright (C) 2024 The Android Open Source Project
-# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
+# OrangeFox product definitions for NX769J (RedMagic 9 Pro)
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_NX769J.mk
-
-COMMON_LUNCH_CHOICES := twrp_NX769J-eng
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/orangefox_NX769J.mk
+COMMON_LUNCH_CHOICES := orangefox_NX769J-eng
