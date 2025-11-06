@@ -1,0 +1,65 @@
+#
+# OrangeFox device configuration for NX769J (RedMagic 9 Pro)
+#
+
+DEVICE_PATH := device/nubia/NX769J
+
+# Inherit from the main device tree
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
+
+# Release info
+PRODUCT_RELEASE_NAME := NX769J
+PRODUCT_DEVICE := NX769J
+PRODUCT_NAME := orangefox_NX769J
+PRODUCT_BRAND := nubia
+PRODUCT_MODEL := RedMagic 9 Pro
+PRODUCT_MANUFACTURER := nubia
+TARGET_OTA_ASSERT_DEVICE := NX769J
+
+# Theme and UI
+TW_STATUS_ICONS_ALIGN := center
+TW_DEFAULT_LANGUAGE := en
+TW_USE_TOOLBOX := 1
+TW_THEME := portrait_hdpi
+
+# OrangeFox specific flags
+FOX_BUILD_DEVICE := NX769J
+FOX_VERSION := R12.1
+FOX_RECOVERY_SYSTEM_PARTITION := /dev/block/bootdevice/by-name/system
+FOX_RECOVERY_VENDOR_PARTITION := /dev/block/bootdevice/by-name/vendor
+FOX_AB_DEVICE := 1
+FOX_VIRTUAL_AB_DEVICE := 1
+
+# A/B partition and dynamic partitions support
+TW_INCLUDE_REPACKTOOLS := 1
+TW_INCLUDE_REPACKTOOLS_VENDOR := 1
+TW_INCLUDE_REPACKTOOLS_SYSTEM := 1
+TW_INCLUDE_LOGICAL := 1
+
+# Magisk and kernel flashing options
+OF_INCLUDE_MAGISK := 1
+OF_USE_MAGISKBOOT_FOR_ALL_PATCHES := 1
+OF_DONT_PATCH_ENCRYPTED_DEVICE := 1
+OF_USE_NEW_MAGISKBOOT := 1
+OF_PATCH_AVB20 := 1
+OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI := 1
+
+# File manager and features
+OF_DISABLE_MIUI_SPECIFIC_FEATURES := 1
+OF_USE_TWRP_SAR_DETECT := 1
+OF_OTA_BACKUP_STOCK_BOOT_IMAGE := 1
+OF_NO_MIUI_OTA_VENDOR_BACKUP := 1
+
+# Decryption and FBE/FDE support
+TW_INCLUDE_CRYPTO := 1
+TW_INCLUDE_FBE_METADATA_DECRYPT := 1
+TW_USE_FSCRYPT_POLICY := 2
+
+# Security and init
+TW_EXCLUDE_SUPERSU := true
+TW_INCLUDE_RESETPROP := 1
+TW_INCLUDE_LIBRESETPROP := 1
+
+# Maintainer info
+FOX_BUILD_TYPE := Official
+FOX_MAINTAINER := YourNameHere
